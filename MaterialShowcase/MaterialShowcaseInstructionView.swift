@@ -18,6 +18,8 @@ public class MaterialShowcaseInstructionView: UIView {
   internal static let PRIMARY_DEFAULT_TEXT = "Awesome action"
   internal static let SECONDARY_DEFAULT_TEXT = "Tap here to do some awesome thing"
   
+  public var safeOffset: CGFloat = 0
+  
   public var primaryLabel: UILabel!
   public var secondaryLabel: UILabel!
   
@@ -62,8 +64,9 @@ public class MaterialShowcaseInstructionView: UIView {
   
   /// Configures and adds primary label view
   private func addPrimaryLabel() {
+    
     if primaryLabel != nil {
-      primaryLabel.removeFromSuperview()
+      return
     }
     
     primaryLabel = UILabel()
@@ -78,7 +81,7 @@ public class MaterialShowcaseInstructionView: UIView {
     primaryLabel.numberOfLines = 0
     primaryLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
     primaryLabel.text = primaryText
-    primaryLabel.frame = CGRect(x: 0,
+    primaryLabel.frame = CGRect(x: safeOffset,
                                 y: 0,
                                 width: getWidth(),
                                 height: 0)
@@ -88,8 +91,9 @@ public class MaterialShowcaseInstructionView: UIView {
   
   /// Configures and adds secondary label view
   private func addSecondaryLabel() {
+    
     if secondaryLabel != nil {
-      secondaryLabel.removeFromSuperview()
+      return
     }
     
     secondaryLabel = UILabel()
@@ -104,7 +108,7 @@ public class MaterialShowcaseInstructionView: UIView {
     secondaryLabel.text = secondaryText
     secondaryLabel.numberOfLines = 0
     
-    secondaryLabel.frame = CGRect(x: 0,
+    secondaryLabel.frame = CGRect(x: safeOffset,
                                   y: primaryLabel.frame.height,
                                   width: getWidth(),
                                   height: 0)
