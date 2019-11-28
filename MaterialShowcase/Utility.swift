@@ -44,6 +44,9 @@ extension UIView {
   
   // Transform a view's shape into circle
   func asCircle() {
+    self.layer.shouldRasterize = true
+    self.layer.rasterizationScale = UIScreen.main.scale
+    self.layer.allowsEdgeAntialiasing = true
     self.layer.cornerRadius = self.frame.width / 2;
     self.layer.masksToBounds = true
   }
