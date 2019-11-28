@@ -318,6 +318,10 @@ extension MaterialShowcase {
         radius = backgroundRadius
       }
       
+      if radius != backgroundRadius {
+        backgroundRadius = radius
+      }
+      
       let center = targetRippleView.center
       
       backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: radius * 2,height: radius * 2))
