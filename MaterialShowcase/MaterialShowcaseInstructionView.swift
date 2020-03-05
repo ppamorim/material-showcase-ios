@@ -85,6 +85,7 @@ public class MaterialShowcaseInstructionView: UIView {
                                 y: 0,
                                 width: getWidth(),
                                 height: 0)
+
     primaryLabel.sizeToFitHeight()
     addSubview(primaryLabel)
   }
@@ -118,7 +119,7 @@ public class MaterialShowcaseInstructionView: UIView {
   }
   
   //Calculate width per device
-  private func getWidth() -> CGFloat{
+  private func getWidth() -> CGFloat {
     //superview was left side
     if (self.superview?.frame.origin.x)! < CGFloat(0) {
       return frame.width - (frame.minX/2)
