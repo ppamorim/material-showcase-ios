@@ -15,6 +15,7 @@ s.source           = { :git => 'https://github.com/aromajoin/material-showcase-i
 s.swift_version = '5.0'
 s.ios.deployment_target = '10.0'
 s.source_files = 'MaterialShowcase/*.swift'
+s.xcconfig = { 'ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES' => 'YES' }
 
 end
 ## Execute push: $pod trunk push MaterialShowcase.podspec
